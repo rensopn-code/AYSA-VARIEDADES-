@@ -303,3 +303,44 @@ grid.css .container {
         text-align: left;
     }
 }
+/* RESPONSIVE PARA CELULARES */
+
+@media (max-width: 768px) {
+
+    [class*="col-"] {
+        width: 100% !important;
+        float: none !important;
+        padding: 10px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    #menu {
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .search-input {
+        width: 100%;
+        float: none;
+        margin-bottom: 10px;
+    }
+
+    .select-order {
+        width: 100%;
+        float: none;
+    }
+
+    .product-box img {
+        height: auto;
+        max-height: 250px;
+    }
+}

@@ -173,3 +173,8 @@
     clear: both; 
     /* Evita que el botón intente flotar al lado del texto o del "Ver más" */
 }
+@media only screen and (max-width: 767px) {
+    body {
+        padding-top: 25px; /* Empuja todo el diseño hacia abajo evitando la zona de la cámara/batería */
+    }
+}

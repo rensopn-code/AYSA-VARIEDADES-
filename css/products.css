@@ -50,7 +50,7 @@
 
     /*  AGREGA ESTA LÍNEA CLAVE: */
 
-    overflow: hidden; 
+    overflow: hidden !important;
 
     /* Esto obliga a la tarjeta blanca a "encerrar" al botón adentro y no dejar que se escape */
 

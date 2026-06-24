@@ -490,3 +490,17 @@ a:hover {
 
     
 }
+
+aside {
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+}
+
+aside a {
+    margin-bottom: 30px;
+}
+
+aside p {
+    margin: 0;
+}

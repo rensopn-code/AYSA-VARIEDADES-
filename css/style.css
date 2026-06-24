@@ -175,3 +175,19 @@ img[alt="logotipo"] {
         margin: 0;
     }
 }
+
+.btn-comprar {
+    display: block; /* Ocupa el ancho disponible centrado */
+    width: 80%;
+    margin: 15px auto 5px auto; /* Lo separa de los detalles y lo centra */
+    background: #DC143C;
+    color: white !important; /* Fuerza a que el texto sea blanco siempre */
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none !important;
+}
+
+.btn-comprar:hover {
+    background: #E65C7B; /* Cambia de color suavemente al pasar el cursor */
+    text-decoration: none !important;
+}

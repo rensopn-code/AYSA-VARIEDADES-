@@ -7,7 +7,7 @@
 .search-input {
     float: left;
     padding: 10px;
-    width: 200;
+    width: 200px; /* CORREGIDO: Se añadió px */
     border: none;
     border-bottom: 1px solid #cccccc;
     outline: 0;
@@ -29,11 +29,20 @@
 }
 
 .product-box {
+    display: block; /* AÑADIDO: Mantiene el bloque estable */
     text-align: center;
     text-decoration: none;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 15px;
+    background: #fff;
+    transition: all 0.3s ease;
 }
 
 .product-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    border-color: #DC143C;
     text-decoration: none;
 }
 
@@ -49,10 +58,12 @@
     font-size: 14px;
     font-weight: normal;
     margin: 5px;
+    /* CORREGIDO: Ajustado para permitir 2 líneas elegantes en móviles sin romperse */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
-    -o-text-overflow: ellipsis;
 }
 
 .product-box .offer {
@@ -67,6 +78,8 @@
 
 .product-box .price {
     font-size: 18px;
+    display: block; /* AÑADIDO: Fuerza al precio a tener su propio espacio */
+    margin-top: 5px;
 }
 
 .product-box strong del {
@@ -113,22 +126,6 @@
     margin-top: 8px;
     font-size: 13px;
     line-height: 1.4;
-}
-
-.product-box {
-    text-align: center;
-    text-decoration: none;
-    border: 1px solid #e5e5e5;
-    border-radius: 12px;
-    padding: 15px;
-    background: #fff;
-    transition: all 0.3s ease;
-}
-
-.product-box:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-    border-color: #DC143C;
 }
 
 .btn-comprar {

@@ -191,3 +191,16 @@ img[alt="logotipo"] {
     background: #E65C7B; /* Cambia de color suavemente al pasar el cursor */
     text-decoration: none !important;
 }
+/* Agrega esto al inicio o final de tus estilos generales */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Evita el colapso del menú en celulares */
+@media only screen and (max-width: 767px) {
+    .container {
+        padding-top: 40px; /* Le da espacio seguro abajo de la barra del iPhone/Android */
+    }
+}

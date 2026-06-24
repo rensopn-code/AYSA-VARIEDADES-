@@ -29,14 +29,31 @@
 }
 
 .product-box {
-    display: block; /* AÑADIDO: Mantiene el bloque estable */
+
+    display: block;
+
     text-align: center;
+
     text-decoration: none;
+
     border: 1px solid #e5e5e5;
+
     border-radius: 12px;
+
     padding: 15px;
+
     background: #fff;
+
     transition: all 0.3s ease;
+
+    
+
+    /*  AGREGA ESTA LÍNEA CLAVE: */
+
+    overflow: hidden; 
+
+    /* Esto obliga a la tarjeta blanca a "encerrar" al botón adentro y no dejar que se escape */
+
 }
 
 .product-box:hover {
@@ -141,7 +158,7 @@
 }
 .btn-comprar {
     display: block;
-    width: 100%; /* Ocupa el ancho interno de la tarjeta */
+    width: 100%;
     box-sizing: border-box;
     margin-top: 15px;
     padding: 10px;
@@ -151,4 +168,8 @@
     font-weight: bold;
     border-radius: 8px;
     text-decoration: none !important;
+    
+    /* AGREGA ESTA LÍNEA CLAVE: */
+    clear: both; 
+    /* Evita que el botón intente flotar al lado del texto o del "Ver más" */
 }

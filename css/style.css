@@ -1,506 +1,82 @@
-* {
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aysa Variedades</title>
 
-html,
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="img/logo.jpeg">
+</head>
 
-a {
-    color: #DC143C;
-    text-decoration: none;
-}
+<body>
 
-a:hover {
-    color: #E65C7B;
-    text-decoration: underline;
-}
+<div class="layout">
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <img src="img/logo.jpeg" alt="logo" class="logo">
 
-.row::after {
-    content: "";
-    clear: both;
-    display: table;
-    width: 100%;
-}
+    <nav class="menu">
+      <a href="#" class="active">Filtro Solar</a>
+      <a href="#">Hidratantes</a>
+      <a href="#">Limpiadores</a>
+      <a href="retinoles.html">Retinoles</a>
+      <a href="#">SORTEO</a>
+      <a href="#">RESEÑAS</a>
+    </nav>
 
+    <div class="social">
+      <a href="#"><img src="img/wa.png"><span>Pedidos</span></a>
+      <a href="#"><img src="img/insta.png"><span>Instagram</span></a>
+      <a href="#"><img src="img/mess.png"><span>Messenger</span></a>
+      <a href="#"><img src="img/face.png"><span>Facebook</span></a>
+    </div>
+  </aside>
 
-/*para moviles */
+  <!-- MAIN -->
+  <main class="main">
 
-@media only screen and (min-width: 600px) {
-    [class*="col-"] {
-        float: left;
-        padding: 10px;
-    }
-    .col-1 {
-        width: 8.33%;
-    }
-    .col-2 {
-        width: 16.66%;
-    }
-    .col-3 {
-        width: 25%;
-    }
-    .col-4 {
-        width: 33.33%;
-    }
-    .col-5 {
-        width: 41.66%;
-    }
-    .col-6 {
-        width: 50%;
-    }
-    .col-7 {
-        width: 58.33%;
-    }
-    .col-8 {
-        width: 66.66%;
-    }
-    .col-9 {
-        width: 75%;
-    }
-    .col-10 {
-        width: 83.33%;
-    }
-    .col-11 {
-        width: 91.66%;
-    }
-    .col-12 {
-        width: 100%;
-    }
-}
+    <h1 class="title">Filtros Solares</h1>
 
-@media only screen and (max-width: 600px) {
-    .col-xs-1 {
-        width: 8.33%;
-    }
-    .col-xs-2 {
-        width: 16.66%;
-    }
-    .col-xs-3 {
-        width: 25%;
-    }
-    .col-xs-4 {
-        width: 33.33%;
-    }
-    .col-xs-5 {
-        width: 41.66%;
-    }
-    .col-xs-6 {
-        width: 50%;
-    }
-    .col-xs-7 {
-        width: 58.33%;
-    }
-    .col-xs-8 {
-        width: 66.66%;
-    }
-    .col-xs-9 {
-        width: 75%;
-    }
-    .col-xs-10 {
-        width: 83.33%;
-    }
-    .col-xs-11 {
-        width: 91.66%;
-    }
-    .col-xs-12 {
-        width: 100%;
-    }
-}
+    <div class="products">
 
+      <!-- PRODUCTO -->
+      <div class="product">
+        <img src="img/protector1.jpg" alt="">
+        <h3>WaterFull Hyaluronic acid sunscreen - Jumiso</h3>
+        <p class="price">HNL 600</p>
 
-/*para tablets*/
+        <details>
+          <summary>Ver más</summary>
+          <p>Protector solar con ácido hialurónico, SPF 50 PA++++...</p>
+        </details>
+      </div>
 
-@media only screen and (min-width: 600px) {
-    .col-s-1 {
-        width: 8.33%;
-    }
-    .col-s-2 {
-        width: 16.66%;
-    }
-    .col-s-3 {
-        width: 25%;
-    }
-    .col-s-4 {
-        width: 33.33%;
-    }
-    .col-s-5 {
-        width: 41.66%;
-    }
-    .col-s-6 {
-        width: 50%;
-    }
-    .col-s-7 {
-        width: 58.33%;
-    }
-    .col-s-8 {
-        width: 66.66%;
-    }
-    .col-s-9 {
-        width: 75%;
-    }
-    .col-s-10 {
-        width: 83.33%;
-    }
-    .col-s-11 {
-        width: 91.66%;
-    }
-    .col-s-12 {
-        width: 100%;
-    }
-}
+      <!-- DUPLICA PRODUCTOS -->
+      <div class="product">
+        <img src="img/protector2.jpg" alt="">
+        <h3>Eucerin Oil Control Toque seco</h3>
+        <p class="price">HNL 1000</p>
+        <details>
+          <summary>Ver más</summary>
+          <p>Control de grasa y acabado mate...</p>
+        </details>
+      </div>
 
+      <!-- (repites más productos igual) -->
 
-/*para mpc*/
+    </div>
 
-@media only screen and (min-width: 768px) {
-    .col-1 {
-        width: 8.33%;
-    }
-    .col-m-2 {
-        width: 16.66%;
-    }
-    .col-m-3 {
-        width: 25%;
-    }
-    .col-m-4 {
-        width: 33.33%;
-    }
-    .col-m-5 {
-        width: 41.66%;
-    }
-    .col-m-6 {
-        width: 50%;
-    }
-    .col-m-7 {
-        width: 58.33%;
-    }
-    .col-m-8 {
-        width: 66.66%;
-    }
-    .col-m-9 {
-        width: 75%;
-    }
-    .col-m-10 {
-        width: 83.33%;
-    }
-    .col-m-11 {
-        width: 91.66%;
-    }
-    .col-m-12 {
-        width: 100%;
-    }
-}
+    <div class="pagination">
+      <a href="#" class="active">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+    </div>
 
-@media only screen and (min-width: 992px) {
-    .col-1 {
-        width: 8.33%;
-    }
-    .col-l-2 {
-        width: 16.66%;
-    }
-    .col-l-3 {
-        width: 25%;
-    }
-    .col-l-4 {
-        width: 33.33%;
-    }
-    .col-l-5 {
-        width: 41.66%;
-    }
-    .col-l-6 {
-        width: 50%;
-    }
-    .col-l-7 {
-        width: 58.33%;
-    }
-    .col-l-8 {
-        width: 66.66%;
-    }
-    .col-l-9 {
-        width: 75%;
-    }
-    .col-l-10 {
-        width: 83.33%;
-    }
-    .col-l-11 {
-        width: 91.66%;
-    }
-    .col-l-12 {
-        width: 100%;
-    }
-}
+  </main>
 
-@media only screen and (min-width: 1200px) {
-    .col-1 {
-        width: 8.33%;
-    }
-    .col-xl-2 {
-        width: 16.66%;
-    }
-    .col-xl-3 {
-        width: 25%;
-    }
-    .col-xl-4 {
-        width: 33.33%;
-    }
-    .col--xl-5 {
-        width: 41.66%;
-    }
-    .col-xl-6 {
-        width: 50%;
-    }
-    .col-xl-7 {
-        width: 58.33%;
-    }
-    .col-xl-8 {
-        width: 66.66%;
-    }
-    .col-xl-9 {
-        width: 75%;
-    }
-    .col-xl-10 {
-        width: 83.33%;
-    }
-    .col-xl-11 {
-        width: 91.66%;
-    }
-    .col-xl-12 {
-        width: 100%;
-    }
-}
+</div>
 
-#menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    margin-top: 20px;
-    text-align: center;
-}
-
-#menu li a {
-    display: block;
-    padding: 5px;
-    margin-bottom: 7px;
-}
-
-#menu li a.active {
-    color: #E65C7B;
-    text-decoration: underline;
-}
-
-@media only screen and (min-width: 768px) {
-    #menu {
-        margin-left: 20px;
-        text-align: left;
-    }
-}
-/* RESPONSIVE PARA CELULARES */
-
-@media (max-width: 768px) {
-
-    [class*="col-"] {
-        width: 100% !important;
-        float: none !important;
-        padding: 10px;
-    }
-
-    .container {
-        width: 100%;
-        padding: 10px;
-    }
-
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    #menu {
-        text-align: center;
-        margin-left: 0;
-    }
-
-    .search-input {
-        width: 100%;
-        float: none;
-        margin-bottom: 10px;
-    }
-
-    .select-order {
-        width: 100%;
-        float: none;
-    }
-
-    .product-box img {
-        height: auto;
-        max-height: 250px;
-    }
-     .tittle-produts {
-    font-weight: lighter;
-    text-align: center;
-    margin: 10px 0 30px 0;
-}
-
-.search-input {
-    float: left;
-    padding: 10px;
-    width: 200;
-    border: none;
-    border-bottom: 1px solid #cccccc;
-    outline: 0;
-}
-
-.search-input:focus {
-    box-shadow: none;
-}
-
-.product-box img {
-    width: 100%;
-    height: 300px;
-    object-fit: contain;
-    display: block;
-}
-
-.select-order {
-    float: right;
-}
-
-.product-box {
-    text-align: center;
-    text-decoration: none;
-}
-
-.product-box:hover {
-    text-decoration: none;
-}
-
-.product-box img {
-    transition: all 0.3s;
-}
-
-.product-box:hover img {
-    transform: scale(1.06);
-}
-
-.product-box h3 {
-    font-size: 14px;
-    font-weight: normal;
-    margin: 5px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    -o-text-overflow: ellipsis;
-}
-
-.product-box .offer {
-    color: red;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-.product-box .hidden {
-    visibility: hidden;
-}
-
-.product-box .price {
-    font-size: 18px;
-}
-
-.product-box strong del {
-    font-size: 14px;
-    font-weight: normal;
-    margin-bottom: 5px;
-    margin-right: 5px;
-}
-
-.pagination {
-    text-align: center;
-    list-style: none;
-    font-size: 18px;
-}
-
-.pagination li {
-    display: inline-block;
-}
-
-.pagination li a {
-    padding: 5px;
-    width: 30px;
-    text-align: center;
-    list-style: inline-block;
-}
-
-.pagination li a.active {
-    border: 1px #DC143C solid;
-}
-
-.info-producto {
-    margin-top: 10px;
-    text-align: left;
-}
-
-.info-producto summary {
-    cursor: pointer;
-    color: #DC143C;
-    font-weight: bold;
-    outline: none;
-}
-
-.info-producto p {
-    margin-top: 8px;
-    font-size: 13px;
-    line-height: 1.4;
-}
-
-.product-box {
-    text-align: center;
-    text-decoration: none;
-    border: 1px solid #e5e5e5;
-    border-radius: 12px;
-    padding: 15px;
-    background: #fff;
-    transition: all 0.3s ease;
-}
-
-.product-box:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-    border-color: #DC143C;
-}
-
-.btn-comprar {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 8px 12px;
-    background: #DC143C;
-    color: white;
-    border-radius: 8px;
-    font-size: 14px;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-    
-}
-
-aside {
-    text-align: center;
-    padding: 15px;
-    font-size: 14px;
-}
-
-aside a {
-    margin-bottom: 30px;
-}
-
-aside p {
-    margin: 0;
-}
+</body>
+</html>

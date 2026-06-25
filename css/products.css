@@ -178,3 +178,16 @@
         padding-top: 25px; /* Empuja todo el diseño hacia abajo evitando la zona de la cámara/batería */
     }
 }
+@media only screen and (max-width: 600px) {
+    /* Controla que la imagen no estire la tarjeta hacia abajo */
+    .product-box img {
+        max-height: 140px; 
+        object-fit: contain; /* Mantiene la proporción del protector sin deformarlo */
+        margin-bottom: 10px;
+    }
+    
+    /* Achica el espacio interno de la tarjeta para que sea más compacta */
+    .product-box {
+        padding: 8px !important;
+    }
+}

@@ -224,3 +224,9 @@ img[alt="logotipo"] {
         padding: 8px 4px;
     }
 }
+/* Esto empujará los productos hacia abajo solo en las pantallas de celulares */
+@media only screen and (max-width: 767px) {
+    .row {
+        margin-top: 120px !important; /* Le da el espacio libre necesario al menú de arriba */
+    }
+}

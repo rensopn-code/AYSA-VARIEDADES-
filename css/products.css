@@ -204,3 +204,32 @@
         margin-top: 60px !important; /* El empujón exacto que necesita el cel */
     }
 }
+/* ==========================================
+   ARREGLO DEFINITIVO PARA EL CELULAR
+   ========================================== */
+@media only screen and (max-width: 767px) {
+    /* 1. Forzamos a que la imagen sea más pequeña en el móvil */
+    .product-box img {
+        height: 140px !important; /* Reduce la altura exagerada */
+        object-fit: contain;      /* Evita que el protector se deforme o aplaste */
+        margin: 0 auto 10px auto;
+    }
+
+    /* 2. Compactamos la tarjeta blanca */
+    .product-box {
+        padding: 10px !important;
+        margin-bottom: 15px;      /* Separa las filas entre sí */
+        height: auto !important;  /* Obliga a la tarjeta a medir solo lo necesario */
+    }
+
+    /* 3. Reducimos el tamaño de las letras para que quepan bien en dos columnas */
+    .product-box h3 {
+        font-size: 13px !important;
+        margin: 4px 0 !important;
+    }
+
+    .product-box .price {
+        font-size: 15px !important;
+        margin-top: 4px !important;
+    }
+}

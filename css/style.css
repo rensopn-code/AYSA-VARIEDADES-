@@ -204,3 +204,23 @@ img[alt="logotipo"] {
         padding-top: 40px; /* Le da espacio seguro abajo de la barra del iPhone/Android */
     }
 }
+
+@media only screen and (max-width: 600px) {
+    .product-box {
+        padding: 8px; /* Reduce el espacio interno para que quepa más contenido */
+        margin-bottom: 15px; /* Separa las filas de productos entre sí */
+    }
+    
+    .product-box h3 {
+        font-size: 14px; /* Achica un poco los títulos para que no se corten feo */
+    }
+
+    .price {
+        font-size: 16px;
+    }
+
+    .btn-comprar {
+        font-size: 13px; /* Hace el texto del botón un poquito más pequeño para que entre en una sola línea */
+        padding: 8px 4px;
+    }
+}

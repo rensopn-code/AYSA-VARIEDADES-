@@ -7,7 +7,7 @@
 .search-input {
     float: left;
     padding: 10px;
-    width: 200px; /* CORREGIDO: Se añadió px */
+    width: 200px;
     border: none;
     border-bottom: 1px solid #cccccc;
     outline: 0;
@@ -22,6 +22,7 @@
     height: 300px;
     object-fit: contain;
     display: block;
+    transition: all 0.3s;
 }
 
 .select-order {
@@ -29,31 +30,15 @@
 }
 
 .product-box {
-
     display: block;
-
     text-align: center;
-
     text-decoration: none;
-
     border: 1px solid #e5e5e5;
-
     border-radius: 12px;
-
     padding: 15px;
-
     background: #fff;
-
     transition: all 0.3s ease;
-
-    
-
-    /*  AGREGA ESTA LÍNEA CLAVE: */
-
     overflow: hidden !important;
-
-    /* Esto obliga a la tarjeta blanca a "encerrar" al botón adentro y no dejar que se escape */
-
 }
 
 .product-box:hover {
@@ -61,10 +46,6 @@
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
     border-color: #DC143C;
     text-decoration: none;
-}
-
-.product-box img {
-    transition: all 0.3s;
 }
 
 .product-box:hover img {
@@ -75,7 +56,6 @@
     font-size: 14px;
     font-weight: normal;
     margin: 5px;
-    /* CORREGIDO: Ajustado para permitir 2 líneas elegantes en móviles sin romperse */
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -95,7 +75,7 @@
 
 .product-box .price {
     font-size: 18px;
-    display: block; /* AÑADIDO: Fuerza al precio a tener su propio espacio */
+    display: block;
     margin-top: 5px;
 }
 
@@ -146,17 +126,6 @@
 }
 
 .btn-comprar {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 8px 12px;
-    background: #DC143C;
-    color: white;
-    border-radius: 8px;
-    font-size: 14px;
-    text-decoration: none;
-    transition: 0.3s;
-}
-.btn-comprar {
     display: block;
     width: 100%;
     box-sizing: border-box;
@@ -168,95 +137,74 @@
     font-weight: bold;
     border-radius: 8px;
     text-decoration: none !important;
-    
-    /* AGREGA ESTA LÍNEA CLAVE: */
     clear: both; 
-    /* Evita que el botón intente flotar al lado del texto o del "Ver más" */
 }
-@media only screen and (max-width: 767px) {
-    body {
-        padding-top: 25px; /* Empuja todo el diseño hacia abajo evitando la zona de la cámara/batería */
-    }
-}
-@media only screen and (max-width: 600px) {
-    /* Controla que la imagen no estire la tarjeta hacia abajo */
-    .product-box img {
-        max-height: 140px; 
-        object-fit: contain; /* Mantiene la proporción del protector sin deformarlo */
-        margin-bottom: 10px;
-    }
-    
-    /* Achica el espacio interno de la tarjeta para que sea más compacta */
-    .product-box {
-        padding: 8px !important;
-    }
-}
-/* Para computadoras (PC) */
+
+/* =======================================================
+   SECCIÓN PARA COMPUTADORA (PANTALLAS GRANDES)
+   ======================================================= */
 @media only screen and (min-width: 768px) {
     .row {
-        margin-top: 20px; /* Un espacio sutil y limpio para la PC */
+        margin-top: 20px;
     }
 }
 
-/* Para celulares (Móvil) */
+/* =======================================================
+   SECCIÓN EXCLUSIVA PARA EL CELULAR (MÓVIL)
+   ======================================================= */
 @media only screen and (max-width: 767px) {
+    body {
+        padding-top: 25px !important;
+    }
+
+    /* Convertimos el contenedor en un Flexbox indestructible */
     .row {
-        margin-top: 60px !important; /* El empujón exacto que necesita el cel */
-    }
-}
-/* ==========================================
-   ARREGLO DEFINITIVO PARA EL CELULAR
-   ========================================== */
-@media only screen and (max-width: 767px) {
-    /* 1. Forzamos a que la imagen sea más pequeña en el móvil */
-    .product-box img {
-        height: 140px !important; /* Reduce la altura exagerada */
-        object-fit: contain;      /* Evita que el protector se deforme o aplaste */
-        margin: 0 auto 10px auto;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        margin-top: 40px !important; 
+        padding: 0 5px !important;
+        float: none !important;
     }
 
-    /* 2. Compactamos la tarjeta blanca */
+    /* Rompemos el float del grid antiguo y forzamos el 50% exacto */
+    [class*="col-xs-6"].product-box, 
     .product-box {
-        padding: 10px !important;
-        margin-bottom: 15px;      /* Separa las filas entre sí */
-        height: auto !important;  /* Obliga a la tarjeta a medir solo lo necesario */
+        width: 50% !important; 
+        max-width: 50% !important;
+        flex: 0 0 50% !important;
+        float: none !important; 
+        box-sizing: border-box !important;
+        padding: 6px !important; 
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important; 
     }
 
-    /* 3. Reducimos el tamaño de las letras para que quepan bien en dos columnas */
+    /* Forzamos a que las imágenes se mantengan simétricas sin estirar la caja */
+    .product-box img {
+        height: 130px !important;
+        max-height: 130px !important;
+        object-fit: contain !important;
+        margin: 0 auto 10px auto !important;
+    }
+
+    /* Ajustes de textos pequeños para que entren perfecto en dos columnas */
     .product-box h3 {
-        font-size: 13px !important;
+        font-size: 12px !important;
         margin: 4px 0 !important;
+        line-height: 1.3 !important;
     }
 
     .product-box .price {
-        font-size: 15px !important;
+        font-size: 14px !important;
         margin-top: 4px !important;
     }
-} 
-important;
-    } 
 
-
-/* ==========================================
-   ARREGLO DE ALINEACIÓN EN FILAS (FLEXBOX)
-   ========================================== */
-@media only screen and (max-width: 767px) {
-    /* Convertimos la fila en un contenedor flexible */
-    .row {
-        display: flex !important;
-        flex-wrap: wrap !important; /* Permite que salten a la siguiente fila de 2 en 2 */
-    }
-
-    /* Aseguramos que cada tarjeta ocupe exactamente la mitad del espacio */
-    .product-box {
-        width: 50% !important; 
-        box-sizing: border-box !important;
-        float: none !important; /* Eliminamos el float antiguo que causaba el desorden */
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: space-between !important; /* Mantiene los botones "Comprar" alineados abajo */
-        margin-bottom: 20px !important;
-        padding: 10px !important;
+    .btn-comprar {
+        font-size: 12px !important;
+        padding: 8px 4px !important;
+        margin-top: auto !important; 
+        width: 100% !important;
     }
 }
 

@@ -236,3 +236,30 @@
 important;
     } 
 
+
+/* ==========================================
+   ARREGLO DE ALINEACIÓN EN FILAS (FLEXBOX)
+   ========================================== */
+@media only screen and (max-width: 767px) {
+    /* Convertimos la fila en un contenedor flexible */
+    .row {
+        display: flex !important;
+        flex-wrap: wrap !important; /* Permite que salten a la siguiente fila de 2 en 2 */
+    }
+
+    /* Aseguramos que cada tarjeta ocupe exactamente la mitad del espacio */
+    .product-box {
+        width: 50% !important; 
+        box-sizing: border-box !important;
+        float: none !important; /* Eliminamos el float antiguo que causaba el desorden */
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important; /* Mantiene los botones "Comprar" alineados abajo */
+        margin-bottom: 20px !important;
+        padding: 10px !important;
+    }
+}
+
+
+
+

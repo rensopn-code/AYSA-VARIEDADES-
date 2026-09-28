@@ -3,93 +3,378 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sorteo Especial - AYSA VARIEDADES</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <title>AYSA VARIEDADES - Sorteo Especial</title>
+
+  <!-- Tipografía moderna Google Fonts (Poppins) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
-    body { font-family: 'Poppins', sans-serif; background: #f8f9fa; color: #333; margin: 0; }
-    
-    .sorteo-card {
-      max-width: 600px;
-      margin: 40px auto;
-      background: white;
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    /* Reset básico */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f9fa;
+      color: #333333;
+      line-height: 1.5;
+    }
+
+    /* --------------------------------------------------
+       ENCABEZADO / BARRA DE NAVEGACIÓN FIJA (STICKY)
+    -------------------------------------------------- */
+    header {
+      position: sticky;
+      top: 0;
+      background-color: #ffffff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .logo-container img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #444;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+      padding: 4px 0;
+    }
+
+    nav a:hover, nav a.active {
+      color: #e63946;
+      border-bottom: 2px solid #e63946;
+    }
+
+    /* --------------------------------------------------
+       BANNER PRINCIPAL
+    -------------------------------------------------- */
+    .hero-banner {
+      background: linear-gradient(135deg, #fceade 0%, #f4dcd6 100%);
+      padding: 30px 20px;
       text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .hero-banner h1 {
+      font-size: 1.8rem;
+      color: #222;
+      font-weight: 700;
+    }
+
+    .hero-banner p {
+      color: #666;
+      font-size: 0.95rem;
+      margin-top: 5px;
+    }
+
+    /* --------------------------------------------------
+       SECCIÓN DE SORTEO
+    -------------------------------------------------- */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto 50px auto;
+      padding: 0 20px;
+    }
+
+    .sorteo-card {
+      max-width: 650px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 30px 25px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      position: relative;
     }
 
     .badge-sorteo {
-      background: #e63946;
-      color: white;
+      background-color: #e63946;
+      color: #ffffff;
+      font-size: 0.8rem;
+      font-weight: 700;
       padding: 6px 16px;
       border-radius: 20px;
-      font-weight: 700;
-      font-size: 0.85rem;
       display: inline-block;
       margin-bottom: 15px;
+      letter-spacing: 0.5px;
     }
 
-    .premio-img {
-      width: 100%;
-      max-height: 280px;
-      object-fit: cover;
-      border-radius: 12px;
-      margin: 15px 0;
-    }
-
-    .pasos-lista {
-      text-align: left;
-      background: #f1f3f5;
-      padding: 20px;
-      border-radius: 10px;
-      margin: 20px 0;
-    }
-
-    .pasos-lista li {
+    .sorteo-card h2 {
+      font-size: 1.6rem;
+      color: #222;
+      font-weight: 700;
       margin-bottom: 10px;
     }
 
+    .sorteo-card p.descripcion {
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+
+    .premio-img-container {
+      width: 100%;
+      max-height: 320px;
+      overflow: hidden;
+      border-radius: 12px;
+      margin-bottom: 25px;
+      background-color: #f9f9f9;
+    }
+
+    .premio-img-container img {
+      width: 100%;
+      height: 100%;
+      max-height: 320px;
+      object-fit: cover;
+    }
+
+    .pasos-container {
+      text-align: left;
+      background: #f8f9fa;
+      border: 1px solid #e9ecef;
+      padding: 20px 25px;
+      border-radius: 12px;
+      margin-bottom: 25px;
+    }
+
+    .pasos-container h3 {
+      font-size: 1.1rem;
+      color: #222;
+      margin-bottom: 12px;
+    }
+
+    .pasos-container ol {
+      padding-left: 20px;
+      color: #444;
+      font-size: 0.92rem;
+    }
+
+    .pasos-container li {
+      margin-bottom: 10px;
+    }
+
+    .pasos-container li:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Botón de Participación */
     .btn-participar {
-      display: block;
-      background: #25d366;
-      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background-color: #25d366;
+      color: #ffffff;
       text-decoration: none;
-      padding: 14px;
-      border-radius: 8px;
+      padding: 14px 20px;
+      border-radius: 10px;
       font-weight: 700;
-      font-size: 1.05rem;
-      transition: background 0.3s ease;
+      font-size: 1rem;
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
     .btn-participar:hover {
-      background: #1eb954;
+      background-color: #1eb954;
+      transform: translateY(-2px);
+    }
+
+    /* --------------------------------------------------
+       BOTÓN FLOTANTE WHATSAPP
+    -------------------------------------------------- */
+    .whatsapp-float {
+      position: fixed;
+      width: 55px;
+      height: 55px;
+      bottom: 25px;
+      right: 25px;
+      background-color: #25d366;
+      color: #ffffff;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 28px;
+      box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.25);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: transform 0.2s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.08);
+    }
+
+    /* --------------------------------------------------
+       FOOTER (PIE DE PÁGINA)
+    -------------------------------------------------- */
+    footer {
+      background-color: #1a1a1a;
+      color: #dddddd;
+      padding: 40px 20px 20px 20px;
+      margin-top: 60px;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    .footer-section h4 {
+      color: #ffffff;
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+    }
+
+    .footer-section p {
+      font-size: 0.88rem;
+      color: #aaa;
+      margin-bottom: 8px;
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 20px;
+      border-top: 1px solid #333;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #888;
+    }
+
+    /* Adaptación Pantallas Pequeñas */
+    @media (max-width: 600px) {
+      .nav-container {
+        justify-content: center;
+      }
+      nav ul {
+        justify-content: center;
+        gap: 12px;
+      }
+      nav a {
+        font-size: 0.85rem;
+      }
+      .sorteo-card {
+        padding: 20px 15px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="sorteo-card">
-    <span class="badge-sorteo">🎁 QUEDA ETENTO A PROXIMOS SORTEOS</span>
-    <h1>¡Al Habilitarse el sorteo se habilitara el premio!</h1>
-    <p>--------------------------------------------------------------.</p>
-
-    <!-- Imagen del Premio -->
-    <img src="img/logo.jpeg" alt="Kit de Skincare Sorteo" class="premio-img">
-
-    <div class="pasos-lista">
-      <h3>¿Cómo participar?</h3>
-      <ol>
-        <li>Sigue nuestra cuenta oficial en Instagram/TikTok.</li>
-        <li>Realiza cualquier compra en la tienda o regístrate por WhatsApp.</li>
-        <li>¡Listo! Recibirás tu número de boleto digital.</li>
-      </ol>
+  <!-- BARRA DE NAVEGACIÓN FIJA -->
+  <header>
+    <div class="nav-container">
+      <div class="logo-container">
+        <a href="index.html">
+          <img src="img/logo.jpeg" alt="AYSA Variedades Logo">
+        </a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Filtros Solares</a></li>
+          <li><a href="hidratante.html">Hidratantes</a></li>
+          <li><a href="limpiadores.html">Limpiadores</a></li>
+          <li><a href="retinoles.html">Retinoles</a></li>
+          <li><a href="sorteo.html" class="active">Sorteo</a></li>
+          <li><a href="#">Reseñas</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <!-- Botón directo a WhatsApp -->
-    <a href="https://wa.me/50492170281?text=Hola,%20quiero%20participar%20en%20el%20Sorteo%20de%20Skincare" target="_blank" class="btn-participar">
-      Participar por WhatsApp 📲
-    </a>
+  <!-- BANNER ENCABEZADO -->
+  <section class="hero-banner">
+    <h1>AYSA VARIEDADES</h1>
+    <p>Sorteos Exclusivos & Promociones Especiales</p>
+  </section>
+
+  <!-- CONTENIDO PRINCIPAL / SORTEO -->
+  <div class="container">
+    <div class="sorteo-card">
+      <span class="badge-sorteo">🎁 SORTEO ACTIVO</span>
+      <h2>¡Gana un Kit Completo de Skincare Coreano!</h2>
+      <p class="descripcion">Queremos premiar tu preferencia. Participa hoy y gana una rutina facial completa con productos 100% auténticos.</p>
+
+      <div class="premio-img-container">
+        <img src="img/protector1.jpg" alt="Kit de Premio Sorteo AYSA Variedades">
+      </div>
+
+      <div class="pasos-container">
+        <h3>¿Cómo participar?</h3>
+        <ol>
+          <li>Haz una compra en cualquier categoría o regístrate vía WhatsApp.</li>
+          <li>Sigue nuestras páginas oficiales en Instagram y TikTok.</li>
+          <li>Haz clic en el botón de abajo para enviar tu nombre y obtener tu boleto digital.</li>
+        </ol>
+      </div>
+
+      <a href="https://wa.me/50412345678?text=Hola,%20quiero%20participar%20en%20el%20Sorteo%20de%20Skincare" target="_blank" class="btn-participar">
+        <span>Participar por WhatsApp</span> 📲
+      </a>
+    </div>
   </div>
+
+  <!-- PIE DE PÁGINA -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>AYSA VARIEDADES</h4>
+        <p>Tu tienda de confianza en productos de cuidado facial y dermocosmética auténtica.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Envíos y Pagos</h4>
+        <p>📦 Envíos rápidos a todo Honduras</p>
+        <p>💳 Transferencias Bancarias & Efectivo</p>
+      </div>
+      <div class="footer-section">
+        <h4>Atención al Cliente</h4>
+        <p>📱 WhatsApp directo</p>
+        <p>⏰ Respuestas inmediatas</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 AYSA Variedades. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- BOTÓN FLOTANTE DE WHATSAPP GENERAL -->
+  <a href="https://wa.me/50412345678?text=Hola,%20tengo%20una%20consulta%20general" class="whatsapp-float" target="_blank" title="Consulta directa por WhatsApp">
+    💬
+  </a>
 
 </body>
 </html>

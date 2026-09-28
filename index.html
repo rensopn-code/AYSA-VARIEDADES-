@@ -384,9 +384,8 @@
           <summary>Ver detalles</summary>
           <p>Protector solar híbrido a base de agua con ácido hialurónico. Amplio espectro SPF 50 PA++++.</p>
         </details>
-        <a href="https://wa.link/wdtrgp" target="_blank" class="btn-comprar">
-          Comprar por WhatsApp
-        </a>
+       button onclick="abrirModalPedido('Jumiso - WaterFull Hyaluronic Acid', 'HNL 600')" class="btn-comprar" style="border:none; cursor:pointer; width:100%;">
+  Comprar</button>
       </div>
 
       <!-- Producto 2 -->
@@ -404,9 +403,10 @@
           <summary>Ver detalles</summary>
           <p>Efecto anti-brillo mate para piel mixta a grasa. Textura ultra ligera de rápida absorción.</p>
         </details>
-        <a href="https://wa.link/wdtrgp" target="_blank" class="btn-comprar">
-          Comprar por WhatsApp
-        </a>
+    <button onclick="abrirModalPedido('Eucerin - Oil Control Toque Seco', 'HNL 600')" class="btn-comprar" style="border:none; cursor:pointer; width:100%;">
+  Comprar
+</button>
+          
       </div>
 
       <!-- Producto 3 -->
@@ -422,8 +422,10 @@
           <summary>Ver detalles</summary>
           <p>Ideal para piel sensible o barrera cutánea alterada. Hidratación profunda y protección SPF 50+.</p>
         </details>
-        <a href="https://wa.link/wdtrgp" target="_blank" class="btn-comprar">
-          Comprar por WhatsApp
+        <button onclick="abrirModalPedido('Celimax - Dual Barrier Watery Sun Cream', 'HNL 600')" class="btn-comprar" style="border:none; cursor:pointer; width:100%;">
+  Comprar
+</button>
+          
         </a>
       </div>
 
@@ -440,9 +442,9 @@
           <summary>Ver detalles</summary>
           <p>Control de sebo con complejo Anti Sebum P. Acabado fresco y mate SPF 50+ PA++++.</p>
         </details>
-        <a href="https://wa.link/wdtrgp" target="_blank" class="btn-comprar">
-          Comprar por WhatsApp
-        </a>
+    <button onclick="abrirModalPedido('Celimax - Oil Control Light Sunscreen', 'HNL 600')" class="btn-comprar" style="border:none; cursor:pointer; width:100%;">
+  Comprar
+</button>
       </div>
 
       <!-- Producto 5 -->
@@ -458,9 +460,9 @@
           <summary>Ver detalles</summary>
           <p>Formato en barra refrescante y calmante con Centella Asiática para piel sensible o con acné.</p>
         </details>
-        <a href="https://wa.link/wdtrgp" target="_blank" class="btn-comprar">
-          Comprar por WhatsApp
-        </a>
+        <button onclick="abrirModalPedido('Tocobo - Cica Cooling Sun Stick SPF50+', 'HNL 600')" class="btn-comprar" style="border:none; cursor:pointer; width:100%;">
+  Comprar
+</button>
       </div>
 
       <!-- Producto 6 -->
@@ -476,9 +478,9 @@
           <summary>Ver detalles</summary>
           <p>Textura tipo suero ultraligero hidratante con Centella Asiática y Ácido Hialurónico.</p>
         </details>
-        <a href="https://wa.link/wdtrgp" target="_blank" class="btn-comprar">
-          Comprar por WhatsApp
-        </a>
+        <button onclick="abrirModalPedido('Skin1004 - Hyalu-Cica Water-Fit Sun Serum', 'HNL 600')" class="btn-comprar" style="border:none; cursor:pointer; width:100%;">
+  Comprar
+</button>
       </div>
 
       <!-- Producto 7 -->
@@ -494,9 +496,9 @@
           <summary>Ver detalles</summary>
           <p>Barra solar con acabado suave de algodón, efecto mate y cero sensación pegajosa.</p>
         </details>
-        <a href="https://wa.link/wdtrgp" target="_blank" class="btn-comprar">
-          Comprar por WhatsApp
-        </a>
+        <button onclick="abrirModalPedido('Tocobo - Cotton Soft Sun Stick SPF50+', 'HNL 600')" class="btn-comprar" style="border:none; cursor:pointer; width:100%;">
+  Comprar
+</button>
       </div>
 
       <!-- Producto 8 -->
@@ -512,9 +514,9 @@
           <summary>Ver detalles</summary>
           <p>Acabado luminoso, rápida absorción y unificación del tono de la piel.</p>
         </details>
-        <a href="https://wa.link/wdtrgp" target="_blank" class="btn-comprar">
-          Comprar por WhatsApp
-        </a>
+       <button onclick="abrirModalPedido('Medicube - PDRN Sun Cream', 'HNL 600')" class="btn-comprar" style="border:none; cursor:pointer; width:100%;">
+  Comprar
+</button>
       </div>
 
     </div>
@@ -547,6 +549,91 @@
   <a href="https://wa.link/wdtrgp" class="whatsapp-float" target="_blank" title="Consulta directa por WhatsApp">
     💬
   </a>
+<div id="modalPedido" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:2000; align-items:center; justify-content:center;">
+    <div style="background:#fff; padding:25px; border-radius:12px; max-width:450px; width:90%; position:relative; font-family:'Poppins', sans-serif;">
+      
+      <button onclick="cerrarModal()" style="position:absolute; top:12px; right:15px; border:none; background:none; font-size:20px; cursor:pointer;">✕</button>
+      
+      <h3 style="margin-bottom:5px; color:#222;">Finalizar Pedido</h3>
+      <p id="productoSeleccionado" style="font-weight:600; color:#e63946; margin-bottom:15px; font-size:0.95rem;"></p>
 
+      <form id="formPedido" onsubmit="enviarPedido(event)">
+        <input type="hidden" id="inputProducto" name="Producto">
+
+        <label style="font-size:0.85rem; font-weight:600; display:block; margin-bottom:4px;">Nombre completo:</label>
+        <input type="text" id="nombreCliente" name="Nombre" required placeholder="Ej. Maria Lopez" style="width:100%; padding:8px; margin-bottom:12px; border:1px solid #ccc; border-radius:6px; box-sizing:border-box;">
+
+        <label style="font-size:0.85rem; font-weight:600; display:block; margin-bottom:4px;">Teléfono de contacto:</label>
+        <input type="tel" id="telefonoCliente" name="Telefono" required placeholder="Ej. 9999-9999" style="width:100%; padding:8px; margin-bottom:12px; border:1px solid #ccc; border-radius:6px; box-sizing:border-box;">
+
+        <label style="font-size:0.85rem; font-weight:600; display:block; margin-bottom:4px;">Ciudad y Dirección de Envío:</label>
+        <input type="text" id="direccionCliente" name="Direccion" required placeholder="Ej. Tegucigalpa, Col. Palmira..." style="width:100%; padding:8px; margin-bottom:12px; border:1px solid #ccc; border-radius:6px; box-sizing:border-box;">
+
+        <label style="font-size:0.85rem; font-weight:600; display:block; margin-bottom:4px;">Método de Pago:</label>
+        <select id="pagoCliente" name="MetodoPago" style="width:100%; padding:8px; margin-bottom:18px; border:1px solid #ccc; border-radius:6px; box-sizing:border-box;">
+          <option value="Transferencia Bancaria">Transferencia Bancaria</option>
+          <option value="Efectivo contra entrega">Efectivo contra entrega</option>
+        </select>
+
+        <button type="submit" style="width:100%; background:#25d366; color:white; border:none; padding:12px; border-radius:8px; font-weight:700; cursor:pointer; font-size:1rem;">
+          Confirmar Pedido 📲
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    let productoActual = "";
+    let precioActual = "";
+
+    function abrirModalPedido(nombreProducto, precioProducto) {
+      productoActual = nombreProducto;
+      precioActual = precioProducto;
+      document.getElementById('productoSeleccionado').innerText = nombreProducto + " - " + precioProducto;
+      document.getElementById('inputProducto').value = nombreProducto + " (" + precioProducto + ")";
+      document.getElementById('modalPedido').style.display = 'flex';
+    }
+
+    function cerrarModal() {
+      document.getElementById('modalPedido').style.display = 'none';
+    }
+
+    function enviarPedido(e) {
+      e.preventDefault();
+
+      const numeroWhatsApp = "504XXXXXXXX"; // Reemplaza por tu número de teléfono real
+      const formspreeURL = "https://formspree.io/f/TU_CODIGO_FORMSPREE"; // Reemplaza con tu URL de Formspree
+
+      const nombre = document.getElementById('nombreCliente').value;
+      const telefono = document.getElementById('telefonoCliente').value;
+      const direccion = document.getElementById('direccionCliente').value;
+      const pago = document.getElementById('pagoCliente').value;
+
+      // Envío al correo por Formspree
+      const formData = new FormData(document.getElementById('formPedido'));
+      fetch(formspreeURL, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      // Envío a WhatsApp
+      const mensaje = `🛒 *NUEVO PEDIDO EN AYSA VARIEDADES*%0A%0A` +
+                      `📦 *Producto:* ${productoActual}%0A` +
+                      `💰 *Precio:* ${precioActual}%0A%0A` +
+                      `👤 *Cliente:* ${nombre}%0A` +
+                      `📞 *Teléfono:* ${telefono}%0A` +
+                      `📍 *Dirección:* ${direccion}%0A` +
+                      `💳 *Pago:* ${pago}`;
+
+      window.open(`https://wa.me/${numeroWhatsApp}?text=${mensaje}`, '_blank');
+
+      cerrarModal();
+      document.getElementById('formPedido').reset();
+    }
+  </script>
+
+</body>
+</html>
 </body>
 </html>
